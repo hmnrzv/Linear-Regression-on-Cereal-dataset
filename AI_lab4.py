@@ -5,11 +5,8 @@ import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
-
-
 from sklearn.linear_model import LinearRegression
 from sklearn.model_selection import train_test_split
-
 import statsmodels.api as sm
 from statsmodels.stats.outliers_influence import variance_inflation_factor
 
@@ -54,19 +51,9 @@ best_cereal = test_data.loc[test_data['Predicted_Rating'].idxmax()]
 
 print("Best cereal on test data:")
 print(best_cereal[['name', 'Predicted_Rating']])
-new_row = pd.DataFrame([{
-    'name': 'Chocolate Bread',
-    'calories': 49,
-    'protein': 3.5,
-    'fat': 0,
-    'sodium': 138,
-    'fiber': 17,
-    'carbo': 10,
-    'sugars': 0.5,
-    'potass': 350,
-    'vitamins': 10,
-    'weight': 1,
-    'rating': None
+new_row = pd.DataFrame([{'name': 'Chocolate Bread', 'calories': 49, 'protein': 3.5, 'fat': 0, 
+                         'sodium': 138, 'fiber': 17, 'carbo': 10, 'sugars': 0.5, 'potass': 350, 
+                         'vitamins': 10, 'weight': 1, 'rating': None
 }])
 
 cereal_data = pd.concat([cereal_data, new_row], ignore_index=True)
